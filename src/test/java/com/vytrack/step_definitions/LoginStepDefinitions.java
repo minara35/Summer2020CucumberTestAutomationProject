@@ -41,5 +41,19 @@ public class LoginStepDefinitions {
         loginPage.login(string);
     }
 
+    @When("user longs in with {string} username and {string}")
+    // "user longs in with      "storemanager85" username and "wrong password"                                storemanager right log, invalid storemager
+    public void user_longs_in_with_username_and(String string, String string2) {
+       loginPage.login(string, string2);
+    }
+
+
+
+
+    @Then("user verifies that {string}")
+    public void user_verifies_that(String string) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
 
 }
