@@ -33,5 +33,13 @@ public class LoginStepDefinitions {
         System.out.println("I see the Dashboard page!");
         Driver.closeDriver();
     }
+    //When user logs in as a "driver" --> public void user_logs_in_as_a(String string) -> loginPage.login(string); -> public void login(String role) { if role == "" do this..}
+    //When user logs in as a "sales manager"
+    //When user logs in as a "store manager"
+    @When("user logs in as a {string}")
+    public void user_logs_in_as_a(String string) {
+        loginPage.login(string);
+    }
+
 
 }
