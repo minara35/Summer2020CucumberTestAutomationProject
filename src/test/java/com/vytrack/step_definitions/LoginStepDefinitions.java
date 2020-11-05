@@ -20,7 +20,7 @@ public class LoginStepDefinitions {
     @When("user logs in")
     public void user_logs_in() throws InterruptedException {
         loginPage.login();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
     }
 
     @Then("user should see dashboard page")
@@ -39,11 +39,6 @@ public class LoginStepDefinitions {
     @When("user logs in as a {string}")
     public void user_logs_in_as_a(String string) {
         loginPage.login(string);
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     //  String string = "storemanager85";
@@ -52,11 +47,6 @@ public class LoginStepDefinitions {
     @When("user logs in with {string} username and {string} password")
     public void user_logs_in_with_username_and_password(String string, String string2) {
         loginPage.login(string, string2);
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     //    String expected = "Invalid user name or password."

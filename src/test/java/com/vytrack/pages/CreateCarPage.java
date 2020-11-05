@@ -7,7 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CreateCarPage {
+public class CreateCarPage extends BasePage{
+
     @FindBy(css = "[title='Create Car']")
     private WebElement createCarBtn;
 
@@ -25,6 +26,10 @@ public class CreateCarPage {
 
     public void enterLicensePlate(String licensePlate) {
         BrowserUtils.enterText(licencePlateInputBox, licensePlate);
+    }
+
+    public void enterModelYear(String modelYear) {
+        BrowserUtils.enterText(modelYearInputBox, modelYear);
     }
 
     /**
