@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage {
+
     //To not use web elements directly in step definition classes
     //helps to prevent code duplication and keep step definitions clean
     @FindBy(id = "prependedInput")

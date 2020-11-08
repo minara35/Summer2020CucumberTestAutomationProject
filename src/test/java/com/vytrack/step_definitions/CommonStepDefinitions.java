@@ -18,4 +18,3 @@ public class CommonStepDefinitions {
         basePage.clickSaveAndClose();
     }
 }
-

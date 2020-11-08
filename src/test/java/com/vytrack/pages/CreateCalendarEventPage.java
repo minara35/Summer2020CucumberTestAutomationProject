@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CreateCalendarEventPage  extends BasePage {
+public class CreateCalendarEventPage extends BasePage {
 
     @FindBy(css = "[title='Create Calendar event']")
     private WebElement createCalendarEventBtn;

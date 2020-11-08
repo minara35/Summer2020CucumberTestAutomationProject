@@ -40,7 +40,7 @@ public class CreateCarStepDefinitions {
      *
      * @Then("user verifies following list:")
      * public void user_verifies_following_list(List<String> dataTable){}
-     *
+     * <p>
      * DataTable - cucumber data structure/data type. We convert it into Map, List or List<Map<>>
      */
     @When("user adds new vehicle information")
@@ -52,10 +52,13 @@ public class CreateCarStepDefinitions {
 //            System.out.println("Key: " + entry.getKey() + ", value: "+entry.getValue());
 //        }
 
-        System.out.println("License plate: " + dataTable.get("License Plate"));
-        System.out.println("Model year: " + dataTable.get("Model Year"));
+        String licensePlate = dataTable.get("License Plate");
+        String modelYear = dataTable.get("Model Year");
 
-        createCarPage.enterLicensePlate(dataTable.get("License Plate"));
-        createCarPage.enterModelYear(dataTable.get("Model Year"));
+        System.out.println("License plate: " + licensePlate);
+        System.out.println("Model year: " + modelYear);
+
+        createCarPage.enterLicensePlate(licensePlate);
+        createCarPage.enterModelYear(modelYear);
     }
 }
