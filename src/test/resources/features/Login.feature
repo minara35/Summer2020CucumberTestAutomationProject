@@ -1,4 +1,4 @@
-@login
+@login @B20-183
 Feature: As user I want to be able to login under different roles
 # this is a comment
 #Background - test pre-condition
@@ -6,6 +6,7 @@ Feature: As user I want to be able to login under different roles
   Background: common steps
     Given user is on the login page
 
+  @smoke
   Scenario: Login as a sales manger
     When user logs in
     Then user should see dashboard page
@@ -48,12 +49,12 @@ Feature: As user I want to be able to login under different roles
 # auto-formatting on windows: control + alt + L
 #"driver" - is a parameter. "" allows to do test parametrization which helps to re-use test steps
 
-  @negative_login
+  @negative_login @smoke
   Scenario: Invalid password
     When user logs in with "storemanager85" username and "wrong" password
     Then user verifies that "Invalid user name or password." message is displayed
 
-  @negative_scenario_outline
+  @negative_scenario_outline @B20-182
   Scenario Outline: Invalid login with <username> and <password>
     When user logs in with "<username>" username and "<password>" password
     Then user verifies that "<message>" message is displayed
@@ -64,5 +65,3 @@ Feature: As user I want to be able to login under different roles
       | wrong213 | bad      | Invalid user name or password. |
       | wrong32  | bad      | Invalid user name or password. |
       | wrong12  | bad      | Invalid user name or password. |
-
-

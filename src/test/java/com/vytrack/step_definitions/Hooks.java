@@ -3,10 +3,10 @@ package com.vytrack.step_definitions;
 import com.vytrack.utils.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.BeforeStep;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -28,6 +28,11 @@ public class Hooks {
         System.out.println("::: Starting Automation:::");
         Driver.getDriver().manage().window().maximize();
         Driver.getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    }
+
+    @BeforeStep
+    public void beforeStep(){
+        System.out.println("I'm before step");
     }
 //    this hook will run only before scenarios with a tag @db
 
@@ -52,8 +57,8 @@ public class Hooks {
         //close browser, close DB connection, close tunnel,capture screenshot of the error, etc..
         //this is a hook after
         //runs automatically after every test
-        if (scenario.isFailed()){
-            byte[] data = ((TakesScreenshot)Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+        if (scenario.isFailed()) {
+            byte[] data = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(data, "image/png", scenario.getName());
         }
 
